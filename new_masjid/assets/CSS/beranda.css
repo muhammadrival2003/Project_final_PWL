@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Khatib */
+.banner{
+    margin-top: 40px;
+}
+.img-banner{
+    width: 100%;
+    border-radius: 15px;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    -o-border-radius: 15px;
+}
+
+.khatib{
+    width: 100%;
+}
+
+.text-khatib{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    font-family: 'Poppins';
+}
+
+.card-text1{    
+    font-family: 'Poppins';
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.card-text2{    
+    font-family: 'Poppins';
+    font-size: 15px;
+    font-weight: 300;
+}
+/* Khatib End */
+
+/* Konten Download */
+
+.download{
+    padding: 15px;
+    background-color: white;
+    -radius: 10px;   
+}
+
+.download ul{
+    list-style-type: none;
+    border: 1px solid black;
+    padding: 0;
+    border-radius: 5px;    
+}
+
+.btn-download{
+    background-color: rgb(30, 105, 92);
+    padding: 5px 15px 5px 15px;
+    color: white;
+    font-family: 'Poppins';
+    font-size: 11px;
+    -radius: 3px;
+}
+
+.text-download{    
+    padding-top: 12px;
+    padding-left: 10px;
+}
+
+.text-download h6{        
+    margin: 0;
+}
+
+.text-download p{    
+    font-size: 11px;
+    margin-top: 0;
+}
+
+.button-download{
+    position: relative;
+}
+
+/* Konten Download End */

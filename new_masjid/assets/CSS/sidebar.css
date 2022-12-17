@@ -1,0 +1,83 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap');
+
+/* Navbar */
+.navbar{
+    position: sticky;
+    top: 0;
+    overflow: auto;
+    z-index: 1;
+}
+
+.offcanvas-body-lg{
+    overflow: auto;
+    height: 100vh;
+}
+
+.nav{
+    margin-top: 55px;
+}
+
+.text-albayaan{    
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+
+
+.text-sidebar{
+    font-family: 'Poppins';
+    font-weight: 500;
+    padding: 10px 20px 10px 20px;
+    color: black;    
+    border-radius: 25px;
+}
+
+.text-sidebar:hover{    
+    color: white;
+    background-color: rgb(30, 105, 92);
+    border-radius: 25px;
+}
+
+.collapse{
+    
+}
+
+.kelola-collapse ul{
+    list-style-type: none;    
+}
+
+.kelola-collapse ul li{
+    font-family: 'Poppins';  
+    padding-left: 10px;    
+    padding-right: 10px;
+}
+
+.kelola-collapse ul li a{
+    color: black;
+    text-decoration: none;
+}
+
+.live{
+    color: black;           
+    border-left: 2px solid rgb(30, 105, 92);    
+    padding-left: 5px;    
+}
+
+.active{
+    color: white;
+    background-color: rgb(30, 105, 92);
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.tombol-kep{
+    background-color: #ECECEC;
+}
+
+.tombol-kep:hover{
+    background-color: rgb(251, 255, 0);
+}
+/* Navbar End */
