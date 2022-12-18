@@ -130,8 +130,8 @@ while ($record = mysqli_fetch_array($query)) {
                     <div class="album py-5">
                         <div class="container "> -->
                             <div class="col-lg-9">
-                                <div class="row border-bottom text-center">
-                                    <h3>GALERI</h3>
+                                <div class="row text-center">
+                                    <h1 class="bg-white py-2" style="font-family: 'Poppins'; border-radius: 10px; box-shadow: 0px 3px 5px #aaaaaa2f;">GALERI</h1>
                                 </div>
                                 <div class="album p-5">                                 
                                     <div class="row row-cols-1 row-cols-sm-2 g-3 ">

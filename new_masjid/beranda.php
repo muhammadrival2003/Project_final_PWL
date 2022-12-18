@@ -5,7 +5,7 @@
     <link rel="stylesheet" href="assets/CSS/beranda.css">
 </head>
 
-<div class="col-lg-10 mb-4">
+<div class="col-lg-10">
     <div class="container mt-5">
         <div class="row">
             <!-- Content -->

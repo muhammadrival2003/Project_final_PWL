@@ -11,9 +11,9 @@
             <!-- Content -->
             <div class="col-lg-9">
                 <div class="row text-center">
-                    <h2>CONTACT PERSON</h2>
+                    <h1 class="bg-white py-2" style="font-family: 'Poppins'; border-radius: 10px; box-shadow: 0px 3px 5px #aaaaaa2f;">PENGURUS</h1>
                 </div>
-                <div class="row mt-5 border">
+                <div class="row mt-2 pt-3 bg-white border" style="border-radius: 10px; box-shadow: 0px 3px 5px #aaaaaa2f;">
                     <!-- Kontak 1 -->
                     <div class="col-lg-4 d-flex justify-content-center">
                         <div class="row m-3 text-center">

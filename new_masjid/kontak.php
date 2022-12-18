@@ -11,7 +11,7 @@
             <!-- Content -->
             <div class="col-lg-9">
                 <div class="row text-center">
-                    <h2>CONTACT PERSON</h2>
+                    <h2 class="bg-white py-2" style="font-family: 'Poppins'; border-radius: 10px; box-shadow: 0px 3px 5px #aaaaaa2f;">CONTACT PERSON</h2>
                 </div>
                 <div class="row mt-5 ">
                     <!-- Kontak 1 -->
@@ -26,7 +26,7 @@
                                         <h5 class="card-title">Fillipus Mei Tri Boy Gulo</h5>
                                         <p class="card-title">Pengurus Masjid</p>
                                     </div>
-                                </div>                                
+                                </div>
                                 <div class="row mt-3 border-top text-center">
                                     <a class="py-2" data-bs-toggle="collapse" href="#collapseContact1" role="button" aria-expanded="false" aria-controls="collapseContact1" style="color: black; text-decoration: none;">
                                         <p class="m-0">Contact<i class="bi bi-caret-down-fill ms-2"></i></p>
@@ -56,7 +56,7 @@
                                         <h5 class="card-title">Fillipus Mei Tri Boy Gulo</h5>
                                         <p class="card-title">Pengurus Masjid</p>
                                     </div>
-                                </div>                                
+                                </div>
                                 <div class="row mt-3 border-top text-center">
                                     <a class="py-2" data-bs-toggle="collapse" href="#collapsecontact2" role="button" aria-expanded="false" aria-controls="collapsecontact2" style="color: black; text-decoration: none;">
                                         <p class="m-0">Contact<i class="bi bi-caret-down-fill ms-2"></i></p>

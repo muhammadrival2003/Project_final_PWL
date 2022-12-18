@@ -16,7 +16,7 @@ while ($record = mysqli_fetch_array($query)) {
 <div class="col-lg-10">
     <div class="container mt-5">
         <div class="row">
-            <div class="col-lg-9">                
+            <div class="col-lg-9">
                 <div class="row ">
                     <!-- Modal Tambah Gambar-->
                     <div class="modal fade" id="ModalTambahKegiatan" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -177,7 +177,10 @@ while ($record = mysqli_fetch_array($query)) {
 
                         <?php } ?>
 
-                        <div class="container ">
+                        <div class="container">
+                            <div class="row text-center">
+                                <h1 class="bg-white py-2" style="font-family: 'Poppins'; border-radius: 10px; box-shadow: 0px 3px 5px #aaaaaa2f;">KEGIATAN</h1>
+                            </div>
                             <div class="album">
                                 <div class="container ">
                                     <?php
@@ -190,7 +193,7 @@ while ($record = mysqli_fetch_array($query)) {
                                             <div class="col-lg text-lg-start text-center ms-4">
                                                 <h4 class="mb-0" style="font-size: 25px; font-weight: bold;"><?php echo $row['nama_kegiatan']; ?></h4>
                                                 <P class="mb-0 mt-2" style="font-size: 11px;"><?php echo $row['keterangan']; ?></P>
-                                                <button type="button" data-bs-toggle="modal" data-bs-target="#ModalView<?php echo $row['id']; ?>" class="btn btn-success mb-4 p-0 px-2 pb-1 mt-2" style="-radius: 2px; font-size: 12px;">Selengkapnya</button>                                                
+                                                <button type="button" data-bs-toggle="modal" data-bs-target="#ModalView<?php echo $row['id']; ?>" class="btn btn-success mb-4 p-0 px-2 pb-1 mt-2" style="-radius: 2px; font-size: 12px;">Selengkapnya</button>
                                             </div>
                                         </div>
                                     <?php } ?>
@@ -198,7 +201,7 @@ while ($record = mysqli_fetch_array($query)) {
                             </div>
                         <?php }; ?>
                         </div>
-                </div>                               
+                </div>
             </div>
             <?php include "rightbar.php" ?>
         </div>
