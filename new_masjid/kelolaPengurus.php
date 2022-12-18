@@ -1,6 +1,6 @@
 <?php
 include "proses/connect.php";
-$query = mysqli_query($conn, "SELECT * FROM tb_galeri");
+$query = mysqli_query($conn, "SELECT * FROM tb_pengurus");
 while ($record = mysqli_fetch_array($query)) {
     $result[] = $record;
 }
@@ -21,15 +21,15 @@ while ($record = mysqli_fetch_array($query)) {
                     <!-- Tombol Tambah Gambar -->
                     <div class="col d-flex justify-content-between">
                         <h5>Kelola Data Pengurus</h5>
-                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalTambahGaleri">Tambah Pengurus</button>
+                        <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ModalTambahPengurus">Tambah Pengurus</button>
                     </div>
                     <!-- Tombol Tambah Gambar End -->
                 </div>
             </div>
             <div class="card-body">
                 <div class="row">
-                    <!-- Modal Tambah Gambar-->
-                    <div class="modal fade" id="ModalTambahGaleri" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <!-- Modal Tambah Pengurus -->
+                    <div class="modal fade" id="ModalTambahPengurus" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                         <div class="modal-dialog modal-lg modal-fullscreen-md-down">
                             <div class="modal-content">
                                 <div class="modal-header">
@@ -37,7 +37,7 @@ while ($record = mysqli_fetch_array($query)) {
                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                 </div>
                                 <div class="modal-body">
-                                    <form class="needs-validation" novalidate action="proses/proses_input_galeri.php" method="POST" enctype="multipart/form-data">
+                                    <form class="needs-validation" novalidate action="proses/proses_input_pengurus.php" method="POST" enctype="multipart/form-data">
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="input-group mb-3">
@@ -50,7 +50,7 @@ while ($record = mysqli_fetch_array($query)) {
                                             </div>
                                             <div class="col-lg-6">
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nama Menu" name="judul_foto" required>
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nama Menu" name="nama" required>
                                                     <label for="floatingInput">Nama Pengurus</label>
                                                     <div class="invalid-feedback">
                                                         Masukkan nama pengurus
@@ -61,7 +61,7 @@ while ($record = mysqli_fetch_array($query)) {
                                         <div class="row">
                                             <div class="col-lg-6">
                                                 <div class="form-floating mb-3">
-                                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nama Menu" name="judul_foto" required>
+                                                    <input type="text" class="form-control" id="floatingInput" placeholder="Nama Menu" name="jabatan" required>
                                                     <label for="floatingInput">Jabatan</label>
                                                     <div class="invalid-feedback">
                                                         Masukkan jabatan
@@ -78,7 +78,7 @@ while ($record = mysqli_fetch_array($query)) {
                             </div>
                         </div>
                     </div>
-                    <!-- Modal Tambah Gambar End -->
+                    <!-- Modal Tambah Pengurus End -->
 
                     <?php
                     if (empty($result)) {
@@ -90,12 +90,12 @@ while ($record = mysqli_fetch_array($query)) {
                     } else {
                         foreach ($result as $row) {
                         ?>
-                            <!-- Modal View Gambar-->
-                            <div class="modal fade" id="ModalView<?php echo $row['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <!-- Modal View Pengurus-->
+                            <div class="modal fade" id="ModalView<?php echo $row['id_pengurus']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-fullscreen-md-down">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel"><?php echo $row['judul_foto']; ?></h1>
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel"><?php echo $row['nama']; ?></h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
@@ -112,11 +112,11 @@ while ($record = mysqli_fetch_array($query)) {
                                     </div>
                                 </div>
                             </div>
-                            <!-- End Modal View Gambar-->
+                            <!-- End Modal View Pengurus-->
 
 
-                            <!-- Modal Edit Gambar-->
-                            <div class="modal fade" id="ModalEdit<?php echo $row['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <!-- Modal Edit Pengurus-->
+                            <div class="modal fade" id="ModalEdit<?php echo $row['id_pengurus']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg modal-fullscreen-md-down">
                                     <div class="modal-content">
                                         <div class="modal-header">
@@ -124,8 +124,8 @@ while ($record = mysqli_fetch_array($query)) {
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form class="needs-validation" novalidate action="proses/proses_edit_galeri.php" method="POST" enctype="multipart/form-data">
-                                                <input type="hidden" value="<?php echo $row['id']; ?>" name="id">
+                                            <form class="needs-validation" novalidate action="proses/proses_edit_pengurus.php" method="POST" enctype="multipart/form-data">
+                                                <input type="hidden" value="<?php echo $row['id_pengurus']; ?>" name="id">
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="input-group mb-3">
@@ -138,10 +138,21 @@ while ($record = mysqli_fetch_array($query)) {
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="form-floating mb-3">
-                                                            <input type="text" class="form-control" id="floatingInput" placeholder="Nama Menu" name="judul_foto" required>
+                                                            <input type="text" class="form-control" id="floatingInput" placeholder="Nama Menu" name="nama" required>
                                                             <label for="floatingInput">Judul Foto</label>
                                                             <div class="invalid-feedback">
                                                                 Masukkan judul gambar
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="form-floating mb-3">
+                                                            <input type="text" class="form-control" id="floatingInput" placeholder="Nama Menu" name="jabatan" required>
+                                                            <label for="floatingInput">Jabatan</label>
+                                                            <div class="invalid-feedback">
+                                                                Masukkan jabatan
                                                             </div>
                                                         </div>
                                                     </div>
@@ -155,22 +166,22 @@ while ($record = mysqli_fetch_array($query)) {
                                     </div>
                                 </div>
                             </div>
-                            <!-- Modal Edit Gambar End -->
+                            <!-- Modal Edit Pengurus End -->
 
-                            <!-- Modal Delete-->
-                            <div class="modal fade" id="ModalDelete<?php echo $row['id']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <!-- Modal Delete Pengurus -->
+                            <div class="modal fade" id="ModalDelete<?php echo $row['id_pengurus']; ?>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-md modal-fullscreen-md-down">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Data User</h1>
+                                            <h1 class="modal-title fs-5" id="exampleModalLabel">Delete Data Pengurus</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <form class="needs-validation" novalidate action="proses/proses_delete_galeri.php" method="POST">
-                                                <input type="hidden" value="<?php echo $row['id'] ?>" name="id">
+                                            <form class="needs-validation" novalidate action="proses/proses_delete_pengurus.php" method="POST">
+                                                <input type="hidden" value="<?php echo $row['id_pengurus'] ?>" name="id">
                                                 <input type="hidden" value="<?php echo $row['foto'] ?>" name="foto">
                                                 <div class="col-lg-12">
-                                                    Apakah anda ingin menghapus menu <b><?php echo $row['judul_foto'] ?></b>
+                                                    Apakah anda ingin menghapus data pengurus <b><?php echo $row['nama'] ?></b>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -181,7 +192,7 @@ while ($record = mysqli_fetch_array($query)) {
                                     </div>
                                 </div>
                             </div>
-                            <!-- End Modal Delete-->
+                            <!-- End Modal Delete Pengurus -->
 
                         <?php } ?>
 
@@ -191,7 +202,8 @@ while ($record = mysqli_fetch_array($query)) {
                                     <tr class="text-nowrap">
                                         <th scope="col">No</th>
                                         <th scope="col">Foto</th>
-                                        <th scope="col">Judul Gambar</th>
+                                        <th scope="col">Nama</th>
+                                        <th scope="col">Jabatan</th>
                                         <th scope="col">Aksi</th>
                                     </tr>
                                 </thead>
@@ -203,18 +215,21 @@ while ($record = mysqli_fetch_array($query)) {
                                         <tr>
                                             <th scope="row"><?php echo $no++; ?></th>
                                             <td>
-                                                <div style="width: 90px;">
+                                                <div style="width: 60px;">
                                                     <img src="assets/img/<?php echo $row['foto']; ?>" class="img-thumbnail" alt="...">
                                                 </div>
                                             </td>
                                             <td>
-                                                <?php echo $row['judul_foto']; ?>
+                                                <?php echo $row['nama']; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $row['jabatan']; ?>
                                             </td>
                                             <td>
                                                 <div class="d-flex">
-                                                    <button class="btn btn-info btn-sm me-1" data-bs-toggle="modal" data-bs-target="#ModalView<?php echo $row['id']; ?>"><i class="bi bi-eye"></i></button>
-                                                    <button class="btn btn-warning btn-sm me-1" data-bs-toggle="modal" data-bs-target="#ModalEdit<?php echo $row['id']; ?>"><i class="bi bi-pencil-square"></i></i></button>
-                                                    <button class="btn btn-danger btn-sm me-1" data-bs-toggle="modal" data-bs-target="#ModalDelete<?php echo $row['id']; ?>"><i class="bi bi-trash"></i></i></button>
+                                                    <button class="btn btn-info btn-sm me-1" data-bs-toggle="modal" data-bs-target="#ModalView<?php echo $row['id_pengurus']; ?>"><i class="bi bi-eye"></i></button>
+                                                    <button class="btn btn-warning btn-sm me-1" data-bs-toggle="modal" data-bs-target="#ModalEdit<?php echo $row['id_pengurus']; ?>"><i class="bi bi-pencil-square"></i></i></button>
+                                                    <button class="btn btn-danger btn-sm me-1" data-bs-toggle="modal" data-bs-target="#ModalDelete<?php echo $row['id_pengurus']; ?>"><i class="bi bi-trash"></i></i></button>
                                                 </div>
                                             </td>
                                         </tr>

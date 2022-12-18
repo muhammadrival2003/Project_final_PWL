@@ -59,7 +59,7 @@ while ($record = mysqli_fetch_array($query)) {
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-lg-4">
+                                            <div class="col-lg-6">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control" id="floatingInput" placeholder="Nama Menu" name="narasumber" required>
                                                     <label for="floatingInput">Nama Narasumber</label>
@@ -68,7 +68,18 @@ while ($record = mysqli_fetch_array($query)) {
                                                     </div>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-8">
+                                            <div class="col-lg-6">
+                                                <div class="form-floating mb-3">
+                                                    <input type="datetime-local" class="form-control" id="floatingInput" placeholder="Nama Menu" name="waktu" required>
+                                                    <label for="floatingInput">Waktu</label>
+                                                    <div class="invalid-feedback">
+                                                        Masukkan Waktu
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-lg">
                                                 <div class="form-floating mb-3">
                                                     <input type="text" class="form-control" id="floatingInput" placeholder="Nama Menu" name="keterangan" required>
                                                     <label for="floatingInput">Keterangan</label>

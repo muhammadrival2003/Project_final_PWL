@@ -21,6 +21,9 @@
     }elseif (isset($_GET['x']) && $_GET['x'] == 'kelolaPengurus') {
         $page = "kelolaPengurus.php";
         include "main.php";
+    }elseif (isset($_GET['x']) && $_GET['x'] == 'kelolaKontak') {
+        $page = "kelolaKontak.php";
+        include "main.php";
     }elseif (isset($_GET['x']) && $_GET['x'] == 'masuk') {
         $page = "masuk.php";
         include "main.php";

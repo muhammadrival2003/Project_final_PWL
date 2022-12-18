@@ -18,25 +18,26 @@
                     <div class="d-flex flex-column flex-shrink-0 ">
                         <div class="row m-0">
                             <div class="dropdown d-flex justify-content-center ">                                
+                                <?php if (isset($_SESSION['level_decafe'])) { ?>
                                 <a href="#" class="d-flex align-items-center text-dark text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="assets/img/teacher.png" alt="" width="42" height="42" class="rounded-circle me-4">
                                     <strong>
-                                        <?php if (isset($_SESSION['level_decafe'])) {
-                                            echo $hasil['nama'];
-                                        }else{
-                                            ?> <h6>Login</h6>  <?php
-                                        }
-                                        ?>                                            
-                                    </strong>
-                                </a>                                
-                                <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
-                                    <li><a class="dropdown-item" href="login.php">Login</a></li>
-                                    <li><a class="dropdown-item" href="#">Sign-up</a></li>
-                                    <li>
-                                        <hr class="dropdown-divider">
-                                    </li>
-                                    <li><a class="dropdown-item" href="proses/proses_logout.php">Sign out</a></li>
-                                </ul>
+                                        <?php echo $hasil['nama']; ?>
+                                    </strong>                                                                    
+                                    <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+                                        <li><a class="dropdown-item" href="login.php">Login</a></li>
+                                        <li><a class="dropdown-item" href="#">Sign-up</a></li>
+                                        <li>
+                                            <hr class="dropdown-divider">
+                                        </li>
+                                        <li><a class="dropdown-item" href="proses/proses_logout.php">Sign out</a></li>
+                                    </ul>
+                                        <?php 
+                                        }else{ ?> 
+                                            <a class="btn btn-success me-3" href="login.php" role="button">Login</a>
+                                            <a class="btn btn-warning" href="#" role="button">Register</a>                                            
+                                <?php }?>    
+                                </a>                                        
                             </div>
                         </div>
                         <div class="row sholat m-0 mt-5">

@@ -1,3 +1,11 @@
+<?php
+include "proses/connect.php";
+$query = mysqli_query($conn, "SELECT * FROM tb_isi_khutbah");
+while ($record = mysqli_fetch_array($query)) {
+    $result[] = $record;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,69 +24,6 @@
                         <img class="img-banner " src="assets/img/Banner.jpg" alt="">
                     </div>
                     <!-- Banner End -->
-                </div>
-
-                <div class="row">
-                    <!-- <div class="table-responsive">
-                        <table class="table table-hover">
-                            <thead>
-                                <tr class="text-nowrap">
-                                    <th scope="col">
-                                        <div class="row d-flex justify-content-center bg-white rounded-1 pt-2 me-2   dark">
-                                            <img src="assets/img/yasin2.jpg" class="rounded" width="100" alt="">
-                                            <p>Lorem, ipsum dolor.</p>
-                                        </div>
-                                    </th>
-                                    <th scope="col">
-                                        <div class="row d-flex justify-content-center bg-white rounded-1 pt-2 me-2   dark">
-                                            <img src="assets/img/jumat2.jpg" class="rounded" width="100" alt="">
-                                            <p>Lorem, ipsum dolor.</p>
-                                        </div>
-                                    </th>
-                                    <th scope="col">
-                                        <div class="row d-flex justify-content-center bg-white rounded-1 pt-2 me-2   dark">
-                                            <img src="assets/img/yasin2.jpg" class="rounded" width="100" alt="">
-                                            <p>Lorem, ipsum dolor.</p>
-                                        </div>
-                                    </th>
-                                    <th scope="col">
-                                        <div class="row d-flex justify-content-center bg-white rounded-1 pt-2 me-2   dark">
-                                            <img src="assets/img/jumat2.jpg" class="rounded" width="100" alt="">
-                                            <p>Lorem, ipsum dolor.</p>
-                                        </div>
-                                    </th>
-                                    <th scope="col">
-                                        <div class="row d-flex justify-content-center bg-white rounded-1 pt-2 me-2   dark">
-                                            <img src="assets/img/yasin2.jpg" class="rounded" width="100" alt="">
-                                            <p>Lorem, ipsum dolor.</p>
-                                        </div>
-                                    </th>
-                                    <th scope="col">
-                                        <div class="row d-flex justify-content-center bg-white rounded-1 pt-2 me-2   dark">
-                                            <img src="assets/img/jumat2.jpg" class="rounded" width="100" alt="">
-                                            <p>Lorem, ipsum dolor.</p>
-                                        </div>
-                                    </th>
-                                    <th scope="col">
-                                        <div class="row d-flex justify-content-center bg-white rounded-1 pt-2 me-2   dark">
-                                            <img src="assets/img/yasin2.jpg" class="rounded" width="100" alt="">
-                                            <p>Lorem, ipsum dolor.</p>
-                                        </div>
-                                    </th>
-                                    <th scope="col">
-                                        <div class="row d-flex justify-content-center bg-white rounded-1 pt-2 me-2   dark">
-                                            <img src="assets/img/jumat2.jpg" class="rounded" width="100" alt="">
-                                            <p>Lorem, ipsum dolor.</p>
-                                        </div>
-                                    </th>
-
-                                </tr>
-                            </thead>
-                            <tbody>
-
-                            </tbody>
-                        </table>
-                    </div> -->
                 </div>
 
                 <div class="row mt-4 ">
@@ -102,41 +47,19 @@
                         <div class="container-lg download">
                             <h5 style="font-family: 'Poppins';">Download isi Khutbah</h5>
                             <ul>
+                                <?php foreach ($result as $row) { ?>
                                 <li class="d-flex flex-row flex-wrap">
                                     <img src="assets/img/Icon_pengajian.png" style="margin-left: 10px; width: 65px; height: 65px;" alt="">
                                     <div class="col-lg-6 text-download ">
-                                        <h6>Isra Mikraj</h6>
-                                        <p>Tanggal : 22 November 2022</p>
+                                        <h6><?php echo $row['materi'] ?></h6>
+                                        <p>Tanggal : <?php echo $row['waktu'] ?></p>
                                     </div>
                                     <div class="d-grid align-items-center">
-                                        <button class="btn-download" type="button">Download</button>
+                                        <a class="btn btn-success" href="assets/img/<?php echo $row['file']; ?>" download="<?php echo $row['materi'] ?>.pdf">Download</a>
                                     </div>
                                 </li>
-                            </ul>
-                            <ul>
-                                <li class="d-flex flex-row flex-wrap">
-                                    <img src="assets/img/Icon_pengajian.png" style="margin-left: 10px; width: 65px; height: 65px;" alt="">
-                                    <div class="col-lg-6 text-download ">
-                                        <h6>Isra Mikraj</h6>
-                                        <p>Tanggal : 22 November 2022</p>
-                                    </div>
-                                    <div class="d-grid align-items-center">
-                                        <button class="btn-download" type="button">Download</button>
-                                    </div>
-                                </li>
-                            </ul>
-                            <ul>
-                                <li class="d-flex flex-row flex-wrap">
-                                    <img src="assets/img/Icon_pengajian.png" style="margin-left: 10px; width: 65px; height: 65px;" alt="">
-                                    <div class="col-lg-6 text-download ">
-                                        <h6>Isra Mikraj</h6>
-                                        <p>Tanggal : 22 November 2022</p>
-                                    </div>
-                                    <div class="d-grid align-items-center">
-                                        <button class="btn-download" type="button">Download</button>
-                                    </div>
-                                </li>
-                            </ul>
+                                <?php } ?>
+                            </ul>                            
                         </div>
                     </div>
                     <!-- Download End -->

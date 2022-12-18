@@ -4,6 +4,7 @@ $id = (isset($_POST['id'])) ? htmlentities($_POST['id']) : "";
 $nama_kegiatan = (isset($_POST['nama_kegiatan'])) ? htmlentities($_POST['nama_kegiatan']) : "";
 $narasumber = (isset($_POST['narasumber'])) ? htmlentities($_POST['narasumber']) : "";
 $keterangan = (isset($_POST['keterangan'])) ? htmlentities($_POST['keterangan']) : "";
+$waktu = (isset($_POST['waktu'])) ? htmlentities($_POST['waktu']) : "";
 
 
 $kode_rand = rand(10000, 99999) . "-";
@@ -40,7 +41,7 @@ if (!empty($_POST['input_foto_validate'])) {
                 window.location="../kelolaKegiatan"</script>';
     } else {        
             if (move_uploaded_file($_FILES['foto']['tmp_name'], $target_file)) {
-                $query = mysqli_query($conn, "INSERT INTO tb_kegiatan (foto, nama_kegiatan, narasumber, keterangan) values ('" . $kode_rand . $_FILES['foto']['name'] . "', '$nama_kegiatan', '$narasumber', '$keterangan')");                
+                $query = mysqli_query($conn, "INSERT INTO tb_kegiatan (foto, nama_kegiatan, narasumber, waktu, keterangan) values ('" . $kode_rand . $_FILES['foto']['name'] . "', '$nama_kegiatan', '$narasumber', '$waktu','$keterangan')");                
                 if ($query) {
                     $message = '<script>alert("Kegiatan berhasil ditambah");
                 window.location="../kelolaKegiatan"</script>';

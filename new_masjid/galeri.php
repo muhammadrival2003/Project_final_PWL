@@ -19,13 +19,11 @@ while ($record = mysqli_fetch_array($query)) {
             
             <?php
             if (empty($result)) {
-            ?>
-                <!-- <div class="row "> -->
-                    <div class="col-lg-9">
-                        <h6><?php echo "Gambar kosong"; ?></h6>
-                    </div>
-                    <?php include "rightbar.php" ?>            
-                </div>                
+            ?>                
+                <div class="col-lg-9">
+                    <h6><?php echo "Gambar kosong"; ?></h6>
+                </div>
+                <?php include "rightbar.php" ?>
 
                 <?php
             } else {
@@ -131,7 +129,7 @@ while ($record = mysqli_fetch_array($query)) {
                         <div class="container "> -->
                             <div class="col-lg-9">
                                 <div class="row text-center">
-                                    <h1 class="bg-white py-2" style="font-family: 'Poppins'; border-radius: 10px; box-shadow: 0px 3px 5px #aaaaaa2f;">GALERI</h1>
+                                    <h1 class="bg-white py-2" style="font-family: 'Poppins'; border-radius: 10px; box-shadow: 0px 3px 5px #aaaaaa2f;">Galeri</h1>
                                 </div>
                                 <div class="album p-5">                                 
                                     <div class="row row-cols-1 row-cols-sm-2 g-3 ">
@@ -148,8 +146,14 @@ while ($record = mysqli_fetch_array($query)) {
                                                         <div class="row d-flex justify-content-between align-items-center">
                                                             <div class="btn-group">
                                                                 <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#ModalView<?php echo $row['id']; ?>">Lihat</button>
-                                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#ModalEdit<?php echo $row['id']; ?>">Edit</button>
-                                                                <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#ModalDelete<?php echo $row['id']; ?>">Delete</button>
+                                                                <?php                        
+                                                                if (isset($_SESSION['level_decafe'])) {
+                                                                    $level = $_SESSION['level_decafe'];
+                                                                    if ($level == 1) { ?>
+                                                                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#ModalEdit<?php echo $row['id']; ?>">Edit</button>
+                                                                    <button type="button" class="btn btn-sm btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#ModalDelete<?php echo $row['id']; ?>">Delete</button>
+                                                                <?php }
+                                                                } ?>
                                                             </div>
                                                         </div>
                                                     </div>

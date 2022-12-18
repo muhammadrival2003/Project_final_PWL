@@ -1,3 +1,11 @@
+<?php
+include "proses/connect.php";
+$query = mysqli_query($conn, "SELECT * FROM tb_kontak");
+while ($record = mysqli_fetch_array($query)) {
+    $result[] = $record;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,6 +23,7 @@
                 </div>
                 <div class="row mt-5 ">
                     <!-- Kontak 1 -->
+                    <?php foreach ($result as $row) { ?>
                     <div class="col-lg-6 d-flex justify-content-center">
                         <div class="card">
                             <div class="card-body py-1 px-3">
@@ -23,8 +32,8 @@
                                         <img src="assets/img/teacher.png" class="img-fluid rounded-circle" alt="">
                                     </div>
                                     <div class="col-lg-9">
-                                        <h5 class="card-title">Fillipus Mei Tri Boy Gulo</h5>
-                                        <p class="card-title">Pengurus Masjid</p>
+                                        <h5 class="card-title"><?php echo $row['nama'] ?></h5>
+                                        <p class="card-title"><?php echo $row['jabatan'] ?></p>
                                     </div>
                                 </div>
                                 <div class="row mt-3 border-top text-center">
@@ -34,18 +43,19 @@
                                 </div>
                                 <div class="collapse multi-collapse" id="collapseContact1">
                                     <div class="card card-body p-2 m-2">
-                                        <p class="p-0 m-0"><i class="bi bi-telephone mx-3"></i>082245678902</p>
-                                        <hr>
-                                        <p class="p-0 m-0"><i class="bi bi-envelope mx-3"></i></i>filipus0908@gmail.com</p>
+                                        <p class="p-0 m-0"><i class="bi bi-telephone mx-3"></i><?php echo $row['nohp'] ?></p>
+                                        <!-- <hr> -->
+                                        <!-- <p class="p-0 m-0"><i class="bi bi-envelope mx-3"></i></i>filipus0908@gmail.com</p> -->
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <?php } ?>
                     <!-- Kontak 1 End-->
 
                     <!-- Kontak 2 -->
-                    <div class="col-lg-6 d-flex justify-content-center ">
+                    <!-- <div class="col-lg-6 d-flex justify-content-center ">
                         <div class="card">
                             <div class="card-body py-1 px-3">
                                 <div class="row mt-3">
@@ -71,7 +81,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                     <!-- Kontak 2 End-->
                 </div>
             </div>

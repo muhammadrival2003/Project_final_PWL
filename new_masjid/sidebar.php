@@ -47,7 +47,7 @@
                         </li>
                         <li class="nav-item">
                             <a href="kepengurusan" class="nav-link " aria-current="page">
-                                <h6 class="text-sidebar <?php echo ((isset($_GET['x']) && $_GET['x'] == 'kepengurusan') || !isset($_GET['x'])) ? 'active' : 'none'; ?>"><i class="bi bi-person-lines-fill me-3"></i>Pengurus</h6>
+                                <h6 class="text-sidebar <?php echo ((isset($_GET['x']) && $_GET['x'] == 'kepengurusan') || !isset($_GET['x'])) ? 'active' : 'none'; ?>"><i class="bi bi-person-workspace me-3"></i>Pengurus</h6>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -55,8 +55,7 @@
                                 <h6 class="text-sidebar <?php echo ((isset($_GET['x']) && $_GET['x'] == 'kontak') || !isset($_GET['x'])) ? 'active' : 'none'; ?>"><i class="bi bi-person-lines-fill me-3"></i>Kontak</h6>
                             </a>
                         </li>
-                        <?php
-                        // $level = $_SESSION['level_decafe'];
+                        <?php                        
                         if (isset($_SESSION['level_decafe'])) {
                             $level = $_SESSION['level_decafe'];
                             if ($level == 1) { ?>
@@ -82,8 +81,15 @@
                                                     </a>
                                                 </li>
                                                 <li class="mb-1">
-                                                    <a href="#">Kontak</a>
+                                                    <a href="kelolaPengurus" class="nav-link p-0" aria-current="page">
+                                                        <h6 class="<?php echo ((isset($_GET['x']) && $_GET['x'] == 'kelolaPengurus') || !isset($_GET['x'])) ? 'live' : 'none'; ?>"></i>Pengurus</h6>
+                                                    </a>
                                                 </li>
+                                                <li class="mb-1">
+                                                    <a href="kelolaKontak" class="nav-link p-0" aria-current="page">
+                                                        <h6 class="<?php echo ((isset($_GET['x']) && $_GET['x'] == 'kelolaKontak') || !isset($_GET['x'])) ? 'live' : 'none'; ?>"></i>Kontak</h6>
+                                                    </a>
+                                                </li>                                                
                                                 <li class="mb-1">
                                                     <a href="masuk" class="nav-link p-0" aria-current="page">
                                                         <h6 class="<?php echo ((isset($_GET['x']) && $_GET['x'] == 'masuk') || !isset($_GET['x'])) ? 'live' : 'none'; ?>"></i>Uang Masuk</h6>
@@ -92,11 +98,6 @@
                                                 <li class="mb-1">
                                                     <a href="keluar" class="nav-link p-0" aria-current="page">
                                                         <h6 class="<?php echo ((isset($_GET['x']) && $_GET['x'] == 'keluar') || !isset($_GET['x'])) ? 'live' : 'none'; ?>"></i>Uang Keluar</h6>
-                                                    </a>
-                                                </li>
-                                                <li class="mb-1">
-                                                    <a href="kelolaPengurus" class="nav-link p-0" aria-current="page">
-                                                        <h6 class="<?php echo ((isset($_GET['x']) && $_GET['x'] == 'kelolaPengurus') || !isset($_GET['x'])) ? 'live' : 'none'; ?>"></i>Pengurus</h6>
                                                     </a>
                                                 </li>
                                                 <hr>

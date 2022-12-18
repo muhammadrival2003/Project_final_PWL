@@ -21,7 +21,7 @@ if (!empty($_POST['input_uang_keluar_validate'])) {
         if ($query) {
             $message = '<script>
             alert("Data berhasil di Masukkan");
-            window.location="../user"</script>';
+            window.location="../keluar"</script>';
         } else {
             $message = '<script>alert("Data gagal di Masukkan")</script>';
         }
